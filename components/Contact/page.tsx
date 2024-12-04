@@ -54,7 +54,7 @@ const Contact = () => {
         >
           <h2 className="text-5xl py-3 font-extrabold mb-8 leading-tight backdrop-blur border border-gray-300 dark:border-gray-800 rounded-3xl">
             <span className="block text-teal-400">
-              We'd Love to Hear From You!
+              {`We'd Love to Hear From You!`}
             </span>
             <span className="block text-teal-400">Get in touch with us.</span>
           </h2>
