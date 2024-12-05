@@ -67,7 +67,7 @@ const Features: React.FC = () => {
                 <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
                   {feature.name}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 text-lg leading-6">
+                <p className="text-gray-800 dark:text-gray-300 tracking-wide leading-6">
                   {feature.description}
                 </p>
               </motion.div>

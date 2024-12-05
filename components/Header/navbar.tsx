@@ -35,15 +35,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-900" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
+        scrolled
+          ? "bg-gray-900 border-gray-800"
+          : "bg-transparent border-transparent"
       }`}
       style={{ height: scrolled ? "60px" : "70px" }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
         <Link href="/" aria-label="Home">
-          <div className="text-3xl font-extrabold flex items-center cursor-pointer">
-            <span className="text-indigo-500">glass</span>
+          <div className="text-3xl font-extrabold flex items-center gap-2 cursor-pointer">
+            <span className="text-indigo-500">GLASS</span>
             <span className="text-white">LAYER</span>
           </div>
         </Link>

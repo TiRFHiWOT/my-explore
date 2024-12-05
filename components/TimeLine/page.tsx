@@ -23,7 +23,7 @@ const TimelinePage = () => {
 
   return (
     <Layout>
-      <section className="py-20 backdrop-blur border border-gray-300 dark:border-gray-800 z-10 rounded-3xl">
+      <section className="py-20 mt-14 backdrop-blur border border-gray-300 dark:border-gray-800 z-10 rounded-3xl">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <motion.h3
             className="text-5xl font-extrabold text-center mb-10 text-gray-900 dark:text-gray-100"
