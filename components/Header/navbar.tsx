@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-900 opacity-50 backdrop-blur" : "bg-transparent"
+        scrolled ? "bg-gray-900 bg-opacity-50 backdrop-blur" : "bg-transparent"
       }`}
       style={{ height: scrolled ? "60px" : "70px" }}
     >
