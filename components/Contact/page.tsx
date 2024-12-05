@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "../Layout/page";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "@/store/store";
 import {
   fetchContactInfo,
   fetchLocationInfo,
@@ -11,9 +12,8 @@ import VisitUs from "../Admin/visitUs";
 import LoadingOrError from "../Loading&Error/page";
 
 const Contact = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
-  // Access Redux state
   const { contactInfo, locationInfo, loading, error } = useSelector(
     (state: RootState) => state.contactAdmin
   );
@@ -54,7 +54,7 @@ const Contact = () => {
         >
           <h2 className="text-5xl py-3 font-extrabold mb-8 leading-tight backdrop-blur border border-gray-300 dark:border-gray-800 rounded-3xl">
             <span className="block text-teal-400">
-              We'd Love to Hear From You!
+              {`We'd Love to Hear From You!`}
             </span>
             <span className="block text-teal-400">Get in touch with us.</span>
           </h2>
@@ -63,7 +63,6 @@ const Contact = () => {
             feel free to reach out. We are always here to help!
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -103,7 +102,6 @@ const Contact = () => {
                 </button>
               </form>
             </motion.div>
-            {/* Contact Info & Visit Us */}
             <div className="space-y-12">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}

@@ -5,10 +5,11 @@ const RecentActivities = () => (
     </h3>
     <ul className="space-y-4 text-left">
       <li className="text-gray-600 dark:text-gray-300">
-        <strong>John Doe</strong> added a new task "Design Landing Page".
+        <strong>John Doe</strong> added a new task {`"Design Landing Page"`}.
       </li>
       <li className="text-gray-600 dark:text-gray-300">
-        <strong>Jane Smith</strong> completed the "Marketing Analysis" report.
+        <strong>Jane Smith</strong> completed the{" "}
+        {`"Marketing Analysis" report`}.
       </li>
       <li className="text-gray-600 dark:text-gray-300">
         <strong>David Wilson</strong> sent you a message.

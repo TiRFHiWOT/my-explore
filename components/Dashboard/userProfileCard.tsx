@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import { FaUser, FaCamera } from "react-icons/fa";
+import { FaCamera } from "react-icons/fa";
 import LogoutButton from "../Button/page";
 
 interface UserProfileCardProps {

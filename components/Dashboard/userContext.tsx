@@ -1,17 +1,15 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { auth, db, getDoc, setDoc, doc } from "@/app/firebaseConfig";
 import {
-  auth,
-  db,
-  collection,
-  getDoc,
-  setDoc,
-  doc,
-} from "@/app/firebaseConfig";
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 interface User {
   username: string;
   email: string;
-  profilePicture?: string; // Optional profile picture field
+  profilePicture?: string;
 }
 
 interface UserContextProps {
@@ -35,7 +33,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (firebaseUser) => {
-      console.log("Firebase User:", firebaseUser); // Debug log
+      console.log("Firebase User:", firebaseUser);
       if (firebaseUser) {
         await fetchUserProfile();
       } else {
@@ -48,25 +46,26 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   const login = async (email: string, password: string) => {
-    setError(null); // Reset error before attempting login
+    setError(null);
     try {
-      await auth.signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (err: any) {
       setError(err.message);
     }
   };
 
   const signUp = async (name: string, email: string, password: string) => {
-    setError(null); // Reset error before attempting sign up
+    setError(null);
     try {
-      const userCredential = await auth.createUserWithEmailAndPassword(
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
         email,
         password
       );
       const firebaseUser = userCredential.user;
       if (firebaseUser) {
         await setDoc(doc(db, "users", firebaseUser.uid), { name, email });
-        await fetchUserProfile(); // Fetch user profile to update state after sign-up
+        await fetchUserProfile();
       }
     } catch (err: any) {
       setError(err.message);

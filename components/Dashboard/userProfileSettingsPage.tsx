@@ -6,6 +6,7 @@ import UserProfileCard from "./userProfileCard";
 
 interface UserProfileSettingsPageProps {
   section: "profile" | "settings";
+  onUpdateProfile: (newProfilePicture: string) => void;
 }
 
 const UserProfileSettingsPage: React.FC<UserProfileSettingsPageProps> = ({
@@ -19,7 +20,9 @@ const UserProfileSettingsPage: React.FC<UserProfileSettingsPageProps> = ({
     }
   }, [user, fetchUserProfile]);
 
-  console.log("User Data in Component:", user);
+  const handleUpdateProfile = () => {
+    console.log("User Updated");
+  };
 
   if (isLoading) {
     return (
@@ -44,7 +47,9 @@ const UserProfileSettingsPage: React.FC<UserProfileSettingsPageProps> = ({
         section === "profile" ? "mr-12" : ""
       }`}
     >
-      {section === "profile" && user && <UserProfileCard user={user} />}
+      {section === "profile" && user && (
+        <UserProfileCard user={user} onUpdateProfile={handleUpdateProfile} />
+      )}
     </div>
   );
 };

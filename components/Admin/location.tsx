@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 import { ClipLoader } from "react-spinners";
-
-const Leaflet = dynamic(() => import("leaflet"), { ssr: false });
 
 interface Location {
   address: string;

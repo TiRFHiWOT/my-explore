@@ -1,7 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
-
-const Leaflet = dynamic(() => import("leaflet"), { ssr: false });
 
 const useLeafletMap = (
   showLocation: boolean,

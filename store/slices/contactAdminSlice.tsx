@@ -30,7 +30,6 @@ const initialState: ContactState = {
   error: null,
 };
 
-// Async Thunks
 export const fetchContactInfo = createAsyncThunk(
   "contactAdmin/fetchContactInfo",
   async (_, { rejectWithValue }) => {
@@ -73,7 +72,7 @@ export const updateContactInfo = createAsyncThunk(
       if (contactDoc.exists()) {
         await updateDoc(contactDocRef, contactInfo);
       } else {
-        await setDoc(contactDocRef, contactInfo); // Create the document if it doesn't exist
+        await setDoc(contactDocRef, contactInfo);
       }
 
       return contactInfo;
@@ -93,7 +92,7 @@ export const updateLocationInfo = createAsyncThunk(
       if (locationDoc.exists()) {
         await updateDoc(locationDocRef, locationInfo);
       } else {
-        await setDoc(locationDocRef, locationInfo); // Create the document if it doesn't exist
+        await setDoc(locationDocRef, locationInfo);
       }
 
       return locationInfo;
