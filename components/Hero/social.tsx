@@ -10,7 +10,7 @@ const Social = () => {
   return (
     <section>
       <motion.div
-        className="flex space-x-4 mt-6 p-3 rounded-full backdrop-blur bg-[#00000044]"
+        className="flex w-fit space-x-4 md:mt-6 p-3 rounded-full backdrop-blur bg-[#00000044]"
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.9 }}

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Para = () => {
   return (
     <motion.p
-      className="md:text-lg max-w-xl leading-relaxed tracking-wider text-[#E0E0E0]"
+      className="md:text-lg max-w-xl leading-relaxed text-center md:text-start tracking-wider text-[#E0E0E0]"
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.3 }}

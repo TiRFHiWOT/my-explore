@@ -9,8 +9,10 @@ const Text = () => {
       <div className="flex flex-col justify-center items-start space-y-6 w-full max-w-lg">
         <Heading />
         <Para />
-        <Button />
-        <Social />
+        <div className="flex flex-row md:flex-col justify-around w-full">
+          <Button />
+          <Social />
+        </div>
       </div>
     </section>
   );
